@@ -85,18 +85,13 @@ class VADModel(nn.Module):
                  embed_dim: int,
                  visual_length: int,
                  visual_width: int,
-                 visual_head: int,
-                 visual_layers: int,
-                 attn_window: int,
                  prompt_prefix: int,
-                 prompt_postfix: int,
                  device):
         super().__init__()
 
         self.num_class = num_class
         self.visual_length = visual_length  # 时序维度Seq
         self.embed_dim = embed_dim  # 特征维度Dim
-        self.attn_window = attn_window  # 不清楚
         self.learnable_prompt_len = prompt_prefix  # prompt增强维度
         self.dropout_p = 0.1
         self.device = device
